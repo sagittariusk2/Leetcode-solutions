@@ -1,8 +1,7 @@
 class Solution {
 public:
     bool carPooling(vector<vector<int>>& trips, int capacity) {
-        int v1[1001]={0};
-        // memset(v1, 0, sizeof(v1));
+        vector<int> v1(1001, 0);
         for(auto i:trips) {
             v1[i[1]]+=i[0];
             v1[i[2]]-=i[0];
