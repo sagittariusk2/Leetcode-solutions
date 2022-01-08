@@ -8,8 +8,8 @@ public:
 	vector<string> AllPossibleStrings(string s) {
 	    int n=s.length();
 	    vector<string> v1;
-	    for(int i=1; i<65536; i++) {
-	        bitset<16> b1(i);
+	    for(int j=1; j<65536; j++) {
+	        bitset<16> b1(j);
 	        string ans;
 	        for(int i=0; i<n; i++) {
 	            if(b1[i]) {
