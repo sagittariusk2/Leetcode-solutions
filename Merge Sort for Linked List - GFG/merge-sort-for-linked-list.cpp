@@ -38,14 +38,6 @@ private:
         return ans;
     }
     
-    void print(Node* head) {
-        Node* x = head;
-        while(x) {
-            cout << x->data << " ";
-            x = x->next;
-        }
-    }
-    
     Node* merge(Node* head1, Node* head2, int n) {
         int a[n], i=0;
         Node* temp1=head1, *temp2=head2, *pre=nullptr;
