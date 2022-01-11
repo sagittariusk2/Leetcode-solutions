@@ -1,5 +1,5 @@
 # Min distance between two given nodes of a Binary Tree
-## Medium 
+##  Medium 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given a&nbsp;binary tree&nbsp;and two node&nbsp;values your task is to find the minimum distance between them.</span></p>
 
