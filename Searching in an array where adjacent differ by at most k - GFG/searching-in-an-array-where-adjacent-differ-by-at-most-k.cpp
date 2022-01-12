@@ -36,6 +36,10 @@ return 0;
 int search(int arr[], int n, int x, int k) {
     for(int i=0; i<n; i++) {
         if(arr[i]==x) return i;
+        int y = abs(x-arr[i])/k;
+        if(y>1) {
+            i += (y-1);
+        }
     }
     return -1;
 }    	
