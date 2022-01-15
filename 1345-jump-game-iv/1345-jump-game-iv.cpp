@@ -14,7 +14,6 @@ public:
         while(!s1.empty()) {
             set<int> s2;
             for(auto i:s1) {
-                // cout << i << " ";
                 if(i+1<n and dp[i+1]==INT_MAX) {
                     s2.insert(i+1);
                     dp[i+1]=x;
@@ -29,7 +28,6 @@ public:
                 }
                 mp.erase(arr[i]);
             }
-            // cout << endl;
             x++;
             s1 = s2;
         }
