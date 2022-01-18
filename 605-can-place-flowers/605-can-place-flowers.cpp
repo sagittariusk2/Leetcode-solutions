@@ -3,6 +3,7 @@ public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
         int ans = 0, x=0, f=0;
         for(auto i:flowerbed) {
+            if(ans>=n) return true;
             if(i==0) {
                 x++;
             } else {
