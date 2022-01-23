@@ -27,14 +27,6 @@ public:
             else r[i] = sr.top()-1;
             sr.push(i);
         }
-        // for(auto i:l) {
-        //     cout << i << " ";
-        // }
-        // cout << endl;
-        // for(auto i:r) {
-        //     cout << i << " ";
-        // }
-        // cout << endl;
         long long ans = 0;
         for(int i=0; i<n; i++) {
             ans = max(ans, arr[i]*(r[i]-l[i]+1));
