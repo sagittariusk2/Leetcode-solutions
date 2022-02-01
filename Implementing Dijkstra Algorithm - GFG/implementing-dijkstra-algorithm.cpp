@@ -6,32 +6,44 @@ using namespace std;
 class Solution
 {
 	public:
+	
+	int minDistance(vector<int> &dist, vector<bool> &sptSet) {
+	    int mn=INT_MAX, mn_index;
+	    for(int i=0; i<dist.size(); i++) {
+	        if(sptSet[i]==false and dist[i]<=mn) {
+	            mn = dist[i], mn_index=i;
+	        }
+	    }
+	    return mn_index;
+	}
+	
 	//Function to find the shortest distance of all the vertices
     //from the source vertex S.
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
+        vector<vector<int>> graph(V, vector<int>(V, 0));
+        for(int i=0; i<V; i++) {
+            for(auto j:adj[i]) {
+                graph[i][j[0]]=j[1];
+                // cout << i << ", " << j[0] << " : " << j[1] << endl;
+            }
+        }
+        
         // Code here
-        vector<int>dist(V,INT_MAX);
-        priority_queue<pair<int,int>>pq;
-        pq.push({0,S});
-        dist[S]=0;
-        while(!pq.empty())
-        {
-            pair<int,int>p=pq.top();
-            int a=p.second;
-            pq.pop();
-            for(int i=0;i<adj[a].size();i++)
-            {
-                int res=adj[a][i][0];
-                int w=adj[a][i][1];
-                if(w+dist[a]<dist[res])
-                {
-                    dist[res]=dist[a]+w;
-                    pq.push({-1*dist[res],res});
+        vector<int> ans(V, INT_MAX);
+        ans[S]=0;
+        vector<bool> sptSet(V, false);
+        
+        for(int i=0; i<V-1; i++) {
+            int j = minDistance(ans, sptSet);
+            sptSet[j]=true;
+            for(int k=0; k<V; k++) {
+                if(!sptSet[k] and graph[j][k] and ans[j]!=INT_MAX and ans[j]+graph[j][k]<ans[k]) {
+                    ans[k] = ans[j]+graph[j][k];
                 }
             }
         }
-        return dist;
+        return ans;
     }
 };
 
