@@ -8,7 +8,6 @@ public:
             for(int j=0; j<=target; j++) {
                 if(j-i>=0) {
                     for(auto k:ans[j-i]) {
-                        cout << i << " ";
                         vector<int> x = k;
                         x.push_back(i);
                         ans[j].push_back(x);
