@@ -5,21 +5,21 @@ using namespace std;
  // } Driver Code Ends
 class Solution {
 public:
-    vector<string> ans;
-    void solve(int n, string &s) {
-        if(n==s.length()) {
+vector<string> ans;
+    void solve(string s, int i) {
+        if(i==s.length()) {
             ans.push_back(s);
-            return;
-        }
-        for(int i=n; i<s.length(); i++) {
-            swap(s[i], s[n]);
-            solve(n+1, s);
-            swap(s[i], s[n]);
+        } else {
+            for(int j=i; j<s.length(); j++) {
+                swap(s[i], s[j]);
+                solve(s, i+1);
+                swap(s[i], s[j]);
+            }
         }
     }
 
 	vector<string>find_permutation(string S) {
-	    solve(0, S);
+	    solve(S, 0);
 	    sort(ans.begin(), ans.end());
 	    return ans;
 	}
