@@ -10,41 +10,24 @@ using namespace std;
 class Solution{
 public:
     vector<int> nextPermutation(int n, vector<int> &arr) {
-        // int i=n-2;
-        // while(i>=0 && arr[i]>arr[i+1]) {
-        //     i--;
-        // }
-        // int j=i+1;
-        // if(i!=-1) {
-        //     while(j<n && arr[j]>arr[i]) {
-        //         j++;
-        //     }
-        //     j--;
-        //     swap(arr[i], arr[j]);
-        // }
-        // sort(arr.begin()+i+1, arr.end());
-        // return arr;
-        
-        int x=-1;
-        
-        for(int i=n-2; i>=0; i--) {
-            if(arr[i]<arr[i+1]) {
-                x=i;
-                break;
-            }
+        // find the index of first element where it has decreased from last
+        int i=n-2;
+        while(i>=0 and arr[i]>=arr[i+1]) {
+            i--;
         }
-        if(x!=-1) {
-            int j=x+1;
-            for(; j<n; j++) {
-                if(arr[j]<arr[x]) {
-                    break;
-                }
+        
+        if(i!=-1) {
+            // find the index which is just greater then the last found index
+            int j=i;
+            while(j+1<n and arr[j+1]>arr[i]) {
+                j++;
             }
-            j--;
-            swap(arr[x], arr[j]);
+            swap(arr[j], arr[i]);
+            // swap these two
         }
-        x++;
-        sort(arr.begin()+x, arr.end());
+        sort(arr.begin()+i+1, arr.end());
+        // sort remaining
+        
         return arr;
     }
 };
