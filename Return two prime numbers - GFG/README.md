@@ -1,9 +1,9 @@
 # Return two prime numbers
-## Hard 
+##  Hard 
 <div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an even number <strong>N </strong>(greater than 2), return two prime numbers whose sum will be equal to given number. There are several combinations possible. Print only the pair whose&nbsp;minimum value is the&nbsp;smallest among all the minimum values of pairs.</span></p>
+                <p></p><p><span style="font-size:18px">Given an even number <strong>N </strong>(greater than 2), return two prime numbers whose sum will be equal to given number. There are several combinations possible. Print only the pair whose&nbsp;minimum value is the&nbsp;smallest among all the minimum values of pairs and print the minimum element first.</span></p>
 
-<p><span style="font-size:18px"><strong>NOTE:</strong>&nbsp;A solution will always exist,&nbsp;read&nbsp;<a href="https://en.wikipedia.org/wiki/Goldbach%27s_conjecture" rel="nofollow" target="_blank">Goldbach’s conjecture</a>.</span><span style="font-size:18px">&nbsp;</span></p>
+<p><span style="font-size:18px"><strong>NOTE:</strong>&nbsp;A solution will always exist,&nbsp;read&nbsp;<a href="https://en.wikipedia.org/wiki/Goldbach%27s_conjecture" rel="nofollow" target="_blank">Goldbachs conjecture</a>.</span><span style="font-size:18px">&nbsp;</span></p>
 
 <p><strong><span style="font-size:18px">Example 1:</span></strong></p>
 
