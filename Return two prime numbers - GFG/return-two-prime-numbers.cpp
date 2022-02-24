@@ -9,7 +9,6 @@ using namespace std;
 
 class Solution{
 public:
-
     vector<int> primeList(int N) {
         vector<int> prime;
         vector<bool> p(N+1, true);
