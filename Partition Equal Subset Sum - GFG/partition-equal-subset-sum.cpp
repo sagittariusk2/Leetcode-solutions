@@ -7,22 +7,29 @@ using namespace std;
  // } Driver Code Ends
 // User function Template for C++
 
-class Solution {
+class Solution{
 public:
-    int equalPartition(int n, int arr[]) {
+    int equalPartition(int N, int arr[])
+    {
+        // code here
         int sum=0;
-        for(int i=0; i<n; i++)
+        for(int i=0; i<N; i++) {
             sum += arr[i];
+        }
+        
         if(sum%2==1) return 0;
-        sum /= 2;
-        vector<int> dp(sum+1, 0);
-        dp[0] = 1;
-        for(int i=0; i<n; i++) {
-            for(int j=sum; j>=0; j--) {
-                if(j-arr[i]>=0) dp[j] = max(dp[j], dp[j-arr[i]]);
+        int m=sum/2;
+        vector<int> dp(m+1, 0);
+        dp[0]=1;
+        for(int i=0; i<N; i++) {
+            for(int j=m; j>=0; j--) {
+                if(j-arr[i]>=0) {
+                    dp[j] = max(dp[j], dp[j-arr[i]]);
+                }
             }
         }
-        return dp[sum];
+        if(dp[m]>=1) return 1;
+        return 0;
     }
 };
 
